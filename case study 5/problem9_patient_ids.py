@@ -41,21 +41,38 @@ class BST:
             node = self.root
         if node is None:
             return []
-        return self.inorder_recursive(node.left) + [node.value] + self.inorder_recursive(node.right)
+        result = []
+        if node.left is not None:
+            result.extend(self.inorder_recursive(node.left))
+        result.append(node.value)
+        if node.right is not None:
+            result.extend(self.inorder_recursive(node.right))
+        return result
 
     def preorder_recursive(self, node=None):
         if node is None:
             node = self.root
         if node is None:
             return []
-        return [node.value] + self.preorder_recursive(node.left) + self.preorder_recursive(node.right)
+        result = [node.value]
+        if node.left is not None:
+            result.extend(self.preorder_recursive(node.left))
+        if node.right is not None:
+            result.extend(self.preorder_recursive(node.right))
+        return result
 
     def postorder_recursive(self, node=None):
         if node is None:
             node = self.root
         if node is None:
             return []
-        return self.postorder_recursive(node.left) + self.postorder_recursive(node.right) + [node.value]
+        result = []
+        if node.left is not None:
+            result.extend(self.postorder_recursive(node.left))
+        if node.right is not None:
+            result.extend(self.postorder_recursive(node.right))
+        result.append(node.value)
+        return result
 
     def inorder_iterative(self):
         result = []

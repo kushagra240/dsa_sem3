@@ -38,21 +38,38 @@ class BinaryTree:
             node = self.root
         if node is None:
             return []
-        return self.recursive_inorder(node.left) + [node.value] + self.recursive_inorder(node.right)
+        result = []
+        if node.left is not None:
+            result.extend(self.recursive_inorder(node.left))
+        result.append(node.value)
+        if node.right is not None:
+            result.extend(self.recursive_inorder(node.right))
+        return result
 
     def recursive_preorder(self, node=None):
         if node is None:
             node = self.root
         if node is None:
             return []
-        return [node.value] + self.recursive_preorder(node.left) + self.recursive_preorder(node.right)
+        result = [node.value]
+        if node.left is not None:
+            result.extend(self.recursive_preorder(node.left))
+        if node.right is not None:
+            result.extend(self.recursive_preorder(node.right))
+        return result
 
     def recursive_postorder(self, node=None):
         if node is None:
             node = self.root
         if node is None:
             return []
-        return self.recursive_postorder(node.left) + self.recursive_postorder(node.right) + [node.value]
+        result = []
+        if node.left is not None:
+            result.extend(self.recursive_postorder(node.left))
+        if node.right is not None:
+            result.extend(self.recursive_postorder(node.right))
+        result.append(node.value)
+        return result
 
     def iterative_inorder(self):
         result = []
