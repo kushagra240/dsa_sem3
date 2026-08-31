@@ -124,7 +124,7 @@ def main():
 
     values = [50, 30, 70, 20, 40, 60, 80]
     tree = BST(values)
-    print(f"Organization employee IDs in BST -> Non-Recursive Inorder Traversal: {tree.iterative_inorder()}")
+    print(f"Organization employee IDs in BST -> Non-Recursive Inorder Traversal: {tree.inorder_iterative()}")
 
 
 

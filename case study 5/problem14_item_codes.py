@@ -124,7 +124,7 @@ def main():
 
     values = [50, 30, 70, 20, 40, 60, 80]
     tree = BST(values)
-    print(f"Inventory item codes in BST -> Non-Recursive Preorder Traversal: {tree.preorder_iterative() if hasattr(tree, 'preorder_iterative') else tree.iterative_preorder()}")
+    print(f"Inventory item codes in BST -> Non-Recursive Preorder Traversal: {tree.preorder_iterative() if hasattr(tree, 'preorder_iterative') else tree.preorder_iterative()}")
 
 
 

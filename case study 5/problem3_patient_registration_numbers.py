@@ -124,7 +124,7 @@ def main():
 
     values = [50, 30, 70, 20, 40, 60, 80]
     tree = BST(values)
-    print(f"Hospital patient registration numbers in BST -> Recursive Postorder Traversal: {tree.recursive_postorder()}")
+    print(f"Hospital patient registration numbers in BST -> Recursive Postorder Traversal: {tree.postorder_recursive()}")
 
 
 

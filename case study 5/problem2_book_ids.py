@@ -124,7 +124,7 @@ def main():
 
     values = [50, 30, 70, 20, 40, 60, 80]
     tree = BST(values)
-    print(f"Library book IDs in BST -> Recursive Preorder Traversal: {tree.recursive_preorder()}")
+    print(f"Library book IDs in BST -> Recursive Preorder Traversal: {tree.preorder_recursive()}")
 
 
 

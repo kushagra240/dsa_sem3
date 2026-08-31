@@ -124,7 +124,7 @@ def main():
 
     values = [50, 30, 70, 20, 40, 60, 80]
     tree = BST(values)
-    print(f"University student roll numbers in BST -> Recursive Inorder Traversal: {tree.recursive_inorder()}")
+    print(f"University student roll numbers in BST -> Recursive Inorder Traversal: {tree.inorder_recursive()}")
 
 
 

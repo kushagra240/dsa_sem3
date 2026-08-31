@@ -124,8 +124,8 @@ def main():
 
     values = [50, 30, 70, 20, 40, 60, 80]
     tree = BST(values)
-    recursive = tree.recursive_preorder()
-    iterative = tree.iterative_preorder()
+    recursive = tree.preorder_recursive()
+    iterative = tree.preorder_iterative()
     print(f"E-commerce product codes in BST -> Recursive Preorder: {recursive}")
     print(f"E-commerce product codes in BST -> Non-Recursive Preorder: {iterative}")
     print(f"E-commerce product codes in BST -> Same output: {recursive == iterative}")

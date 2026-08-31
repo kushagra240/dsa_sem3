@@ -124,12 +124,12 @@ def main():
 
     values = [50, 30, 70, 20, 40, 60, 80]
     tree = BST(values)
-    r_in = tree.recursive_inorder() if hasattr(tree, 'recursive_inorder') else tree.inorder_recursive()
-    r_pre = tree.recursive_preorder() if hasattr(tree, 'recursive_preorder') else tree.preorder_recursive()
-    r_post = tree.recursive_postorder() if hasattr(tree, 'recursive_postorder') else tree.postorder_recursive()
-    i_in = tree.iterative_inorder() if hasattr(tree, 'iterative_inorder') else tree.inorder_iterative()
-    i_pre = tree.iterative_preorder() if hasattr(tree, 'iterative_preorder') else tree.preorder_iterative()
-    i_post = tree.iterative_postorder_two_stacks() if hasattr(tree, 'iterative_postorder_two_stacks') else tree.postorder_iterative()
+    r_in = tree.inorder_recursive() if hasattr(tree, 'recursive_inorder') else tree.inorder_recursive()
+    r_pre = tree.preorder_recursive() if hasattr(tree, 'recursive_preorder') else tree.preorder_recursive()
+    r_post = tree.postorder_recursive() if hasattr(tree, 'recursive_postorder') else tree.postorder_recursive()
+    i_in = tree.inorder_iterative() if hasattr(tree, 'iterative_inorder') else tree.inorder_iterative()
+    i_pre = tree.preorder_iterative() if hasattr(tree, 'iterative_preorder') else tree.preorder_iterative()
+    i_post = tree.postorder_iterative() if hasattr(tree, 'iterative_postorder_two_stacks') else tree.postorder_iterative()
     print(f"Library accession numbers in BST -> Recursive Inorder: {r_in}")
     print(f"Library accession numbers in BST -> Recursive Preorder: {r_pre}")
     print(f"Library accession numbers in BST -> Recursive Postorder: {r_post}")

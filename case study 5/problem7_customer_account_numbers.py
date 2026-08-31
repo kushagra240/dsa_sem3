@@ -124,7 +124,7 @@ def main():
 
     values = [50, 30, 70, 20, 40, 60, 80]
     tree = BST(values)
-    print(f"Bank customer account numbers in BST -> Traversal output: {tree.inorder_recursive() if hasattr(tree, 'inorder_recursive') else tree.recursive_inorder()}")
+    print(f"Bank customer account numbers in BST -> Traversal output: {tree.inorder_recursive() if hasattr(tree, 'inorder_recursive') else tree.inorder_recursive()}")
 
 
 

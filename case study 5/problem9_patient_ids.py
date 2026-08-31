@@ -124,8 +124,8 @@ def main():
 
     values = [50, 30, 70, 20, 40, 60, 80]
     tree = BST(values)
-    recursive = tree.recursive_postorder()
-    iterative = tree.iterative_postorder_two_stacks()
+    recursive = tree.postorder_recursive()
+    iterative = tree.postorder_iterative()
     print(f"Hospital patient IDs in BST -> Recursive Postorder: {recursive}")
     print(f"Hospital patient IDs in BST -> Non-Recursive Postorder: {iterative}")
     print(f"Hospital patient IDs in BST -> Same output: {recursive == iterative}")
