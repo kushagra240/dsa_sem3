@@ -35,9 +35,11 @@ class SinglyLinkedList:
                     self.head = current.next
                 else:
                     prev.next = current.next
+                print(data, "deleted successfully")
                 return True
             prev = current
             current = current.next
+        print(data, "not found")
         return False
 
     def display(self) -> list[Any]:
@@ -55,4 +57,4 @@ if __name__ == "__main__":
     ll.delete("PC3")
     ll.insert_at_end("PC6")
     print("Updated systems:", ll.display())
-    print("If PC10 is deleted: Data not found")
+    ll.delete("PC10")
