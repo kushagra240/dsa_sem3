@@ -1,6 +1,3 @@
-from collections import deque
-
-
 class Graph:
     def __init__(self, v):
         self.v = v
@@ -22,11 +19,13 @@ class Graph:
 
         visited = [False] * self.v
         visited[start] = True
-        q = deque([start])
+        q = [start]
+        front = 0
         order = []
 
-        while q:
-            u = q.popleft()
+        while front < len(q):
+            u = q[front]
+            front += 1
             order.append(u)
             for nb in sorted(self.adj[u]):
                 if not visited[nb]:

@@ -1,6 +1,3 @@
-from collections import deque
-
-
 class Node:
     def __init__(self, data):
         self.data = data
@@ -31,7 +28,6 @@ class BST:
                     return
                 curr = curr.right
             else:
-                print(f"Duplicate value {data} ignored.")
                 return
 
     def level_order(self, label):
@@ -39,13 +35,13 @@ class BST:
         if not self.root:
             print("Tree is empty.")
             return
-        q = deque([self.root])
+        q = [self.root]
         level = 0
         while q:
             values = []
             size = len(q)
             for _ in range(size):
-                curr = q.popleft()
+                curr = q.pop(0)
                 values.append(str(curr.data))
                 if curr.left:
                     q.append(curr.left)
@@ -73,24 +69,17 @@ class BST:
 def main():
     orig_tree = BST()
     new_tree = BST()
-    n = int(input("Enter number of nodes: "))
-    if n < 0:
-        print("Number of nodes cannot be negative.")
-        return
-    values = []
-    for i in range(n):
-        val = int(input(f"Enter value {i + 1}: "))
-        values.append(val)
-        orig_tree.insert(val)
+    n = int(input())
+    values = list(map(int, input().split())) if n > 0 else []
 
-    for val in values:
+    for val in values[:n]:
+        orig_tree.insert(val)
         new_tree.insert(val)
 
-    orig_tree.level_order("\nOriginal BST - Level-wise:")
-    new_tree.level_order("\nNew BST - Level-wise:")
-    print("\nHeight of Original BST (in edges):", orig_tree.height(orig_tree.root))
-    leaves = orig_tree.get_leaves(orig_tree.root)
-    print("Leaf Nodes of Original BST: " + " ".join(map(str, leaves)))
+    orig_tree.level_order("Original BST - Level-wise:")
+    new_tree.level_order("New BST - Level-wise:")
+    print("Height :", orig_tree.height(orig_tree.root))
+    print("Leaf Nodes :", *orig_tree.get_leaves(orig_tree.root))
 
 
 if __name__ == "__main__":
